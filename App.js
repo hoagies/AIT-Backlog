@@ -15,6 +15,12 @@ Ext.define('CustomApp', {
 					autoLoad: true,
 					model: 'PortfolioItem/Theme',
 					fetch: ['FormattedID','Name'],
+					sorters: [
+						{
+							property: 'Rank',
+							direction: 'ASC'
+						}
+					],
 					filters : [
 						{ property: 'Parent.FormattedID', operator: '=', value: 'I79' }
 					],
