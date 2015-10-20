@@ -50,7 +50,20 @@ Ext.define('CustomApp', {
 				},
 				rowConfig: {
 					field: 'Feature'
+				},
+				listeners: {
+					// select: this._onSelect,
+					load: this._onLoadBoard,
+					scope: this
 				}
+			});
+		},
+		
+		_onLoadBoard: function() {
+			var board = this.down('rallycardboard');
+			rows = board.getRows();
+			Ext.Array.each(rows, function(row) {
+				row.collapse();
 			});
 		},
 		
